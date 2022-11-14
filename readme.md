@@ -7,7 +7,11 @@ __Source:__ [Tango](https://app.tango.us/app/workflow/30d3774b-2bda-46cc-ad7e-92
 
 ***
 
-### 1. Download this file [main.ipynb](https://github.com/Jr-979/Screening-Curve/blob/master/main.ipynb)
+### 0. Clone this repository
+```bash
+git clone https://github.com/Jr-979/Screening-Curve.git
+```
+### 1. Open this file [main.ipynb](https://github.com/Jr-979/Screening-Curve/blob/master/main.ipynb)
 
 
 ### 2. Click on Execute Cell
