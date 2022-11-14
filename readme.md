@@ -1,18 +1,13 @@
 # Screening curve
-
-# [Workflow with 172_104_49_193-jr-979.cdr.co and vscode-remote+172-005f104-005f49-005f193-002djr-002d979-002ecdr-002eco.vscode-resource.vscode-cdn.net](https://app.tango.us/app/workflow/30d3774b-2bda-46cc-ad7e-929c6479236f?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
-
-
-
 __Date:__ November 14, 2022
 
-__Author:__ nuchpol arpassompob
+__Author:__ Nuchpol Arpassompob
 
 __Source:__ [Tango](https://app.tango.us/app/workflow/30d3774b-2bda-46cc-ad7e-929c6479236f?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
 
 ***
 
-### 1. [Go to main.ipynb — myProject — code-server](https://172_104_49_193-jr-979.cdr.co/?folder=%2Fhome%2Fjunior%2FmyProject)
+### 1. Download this file [main.ipynb](https://github.com/Jr-979/Screening-Curve/blob/master/main.ipynb)
 
 
 ### 2. Click on Execute Cell
@@ -49,3 +44,6 @@ __Source:__ [Tango](https://app.tango.us/app/workflow/30d3774b-2bda-46cc-ad7e-92
 
 ***
 _[This Workflow was created with Tango](https://app.tango.us/app/workflow/30d3774b-2bda-46cc-ad7e-929c6479236f?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)_
+
+<!-- 
+### [Workflow with 172_104_49_193-jr-979.cdr.co and vscode-remote+172-005f104-005f49-005f193-002djr-002d979-002ecdr-002eco.vscode-resource.vscode-cdn.net](https://app.tango.us/app/workflow/30d3774b-2bda-46cc-ad7e-929c6479236f?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links) -->
