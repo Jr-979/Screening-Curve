@@ -104,5 +104,6 @@ if __name__ == "__main__" :
         plt.plot(*zip(*sorted(station._memo.items())),label = station.stName)
 
     plt.plot(intersectionx,intersectiony,marker = "o", markersize=5)
+    plt.legend()
     plt.show()
 
