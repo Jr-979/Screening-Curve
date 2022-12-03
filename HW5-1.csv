@@ -1,0 +1,4 @@
+StationName,OvernightCost,FuelCost,LifeOfPlant,DiscountRate
+Gas,379,35,20,0.1
+Coal,1118,15,40,0.1
+Nuclear,1720,5,40,0.1
