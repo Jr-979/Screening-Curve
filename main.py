@@ -50,8 +50,6 @@ class PowerStation:
         return f"Station name : {self.stName}{chr(10)}Overnight Cost : {self.OC}{chr(10)}Fuel Cost : {self.fuel}{chr(10)}Life of plant : {self.T}{chr(10)}Discount rate : {self.r}"
 
 
-
-
 if __name__ == "__main__" :
      # Read station data from csv 
     parser = argparse.ArgumentParser(description='Plot screening curve')
@@ -61,8 +59,26 @@ if __name__ == "__main__" :
     if args.path == "": args.path = "new.csv"
 
     stations = pd.read_csv(args.path).to_dict('records')
+
+    # Check for CSV compatibility
+    for station in stations:
+        header = ['StationName', 'OvernightCost', 'FuelCost', 'LifeOfPlant', 'DiscountRate']
+        # Check CSV header
+        if not list(station.keys()) == header:
+            mismatch = [i for i, (a, b) in enumerate(zip(list(station.keys()), header)) if a != b]
+            for mis in mismatch: print(f"Your CSV file are missing : {header[mis]}")
+            raise ValueError("Given CSV file is not compatible")
+
+        # Check each value data types  
+        for value in header[1:]:
+            if (type(station[value]) is str) :
+                raise ValueError(f"{''.join([' '+ s if s.isupper()  else s for s in value]).lstrip()} should be a number")
+
+
+    # Create an PowerStation object from the parameter
     stations = [PowerStation(**station) for station in stations]
 
+    # Create linear space for numerical calculation
     step_size = 1e-5
     CF = np.arange(0,1.0+step_size,step_size).round(5).tolist()
 
@@ -88,12 +104,20 @@ if __name__ == "__main__" :
             
         pointPrev = point
 
-    # Show the resukt
-    print("Screening Curve")
-    for idx, x in enumerate(intersectionx):
-        print(f"Cheapest to run when CF < {round(x,5)} : {stations[idx].stName}  : {round(x*8760,2)} hr" )
     else:
-        print(f"Cheapest to run when CF > {round(intersectionx[-1],5)} : {stations[-1].stName} : {round(x*8760,2)} hr" )
+        # Show the result
+        print("Screening Curve")
+        if not intersectionx:
+            print(f"Cheapest to run when CF < {1.0} : {stations[point].stName}  : {8760} hr" )
+
+
+    for idx, x in enumerate(intersectionx):
+        print(f"Cheapest to run when CF < {round(x,3)} : {stations[idx].stName}  : {round(round(x,3)*8760,2)} hr" )
+    else:
+        try:
+            print(f"Cheapest to run when CF > {round(intersectionx[-1],3)} : {stations[-1].stName} : {round(round(intersectionx[-1],3)*8760,2)} hr" )
+        except IndexError:
+            pass 
 
     # Show the plot
     for station in stations : station.plot()
